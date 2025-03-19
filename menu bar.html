@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Restaurant</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="menustyles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="table-number-section">
+            <label for="table-number">Select Table Number:</label>
+            <select id="table-number" onchange="enableAddToCartButtons()">
+                <option value="">-- Select Table --</option>
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+                <option value="3">Table 3</option>
+                <option value="4">Table 4</option>
+                <option value="5">Table 5</option>
+            </select>
+        </div>
+        <div class="menu-categories">
+            <a href="#" onclick="filterMenu('refreshment')">Refreshment</a>
+            <a href="#" onclick="filterMenu('Smoothie')">Smoothie</a>
+            <a href="#" onclick="filterMenu('Coffee')">Coffee</a>
+            <a href="#" onclick="filterMenu('Tea')">Tea</a>
+            <a href="#" onclick="filterMenu('Appetizer')">Appetizer</a>
+            <a href="#" onclick="filterMenu('pizza')">Pizza</a>
+            <a href="#" onclick="filterMenu('burger')">Burger</a>
+            <a href="#" onclick="filterMenu('dessert')">Dessert</a>
+        </div>
+        <h2 class="text-center">Menu</h2>
+        <!--REFRESHMENT-->
+        <div class="menu-item refreshment">
+            <img src="image/Frozen-Strawberry-Lemonade.jpg" alt="refreshment">
+            <div class="details">
+                <h5>Frozen strawberry lemonade</h5>
+            </div>
+            <span class="price">₹155</span>
+            <div class="quantity-selector">      
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>   
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Frozen strawberry lemonade', 155)">Add to Cart</button>
+        </div>
+        <div class="menu-item refreshment">
+            <img src="image/Infused Water.webp" alt="refreshment">
+            <div class="details">
+                <h5>Infused Water</h5>
+            </div>
+            <span class="price">₹140</span>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Infused Water', 140)">Add to Cart</button>
+        </div>
+        <div class="menu-item refreshment">
+            <img src="image/mango lemonade.jpg" alt="refreshment">
+            <div class="details">
+                <h5>Mango lemonade</h5>
+            </div>
+            <span class="price">₹155</span>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Mango lemonade', 155)">Add to Cart</button>
+        </div>
+        <div class="menu-item refreshment">
+            <img src="image/homy lemonade.jpg" alt="refreshment">
+            <div class="details">
+                <h5>Homly lemonade</h5>
+            </div>
+            <span class="price">₹150</span>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Homly lemonade', 150)">Add to Cart</button>
+        </div>
+        <div class="menu-item refreshment">
+            <img src="image/Cucumber agua fresca.jpg" alt="refreshment">
+            <div class="details">
+                <h5>Cucumber agua fresca</h5>
+            </div>
+            <span class="price">₹155</span>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Cucumber agua fresca', 150)">Add to Cart</button>
+        </div>
+        <div class="menu-item refreshment">
+            <img src="image/Blackberry Thyme Mocktail.webp" alt="refreshment">
+            <div class="details">
+                <h5>Blackberry Thyme Mocktail</h5>
+            </div>
+            <span class="price">₹165</span>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Blackberry Thyme Mocktail', 165)">Add to Cart</button>
+        </div>
+        <!--smoothie-->
+        <div class="menu-item Smoothie">
+             <img src="image/Oaty Banana Smoothie.jpg" alt="refreshment">
+            <div class="details">
+            <h5>Oaty Banana Smoothie</h5>
+        </div>
+        <span class="price">₹185</span>
+        <div class="quantity-selector">
+            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+            <span class="quantity">1</span>
+            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Oaty Banana Smoothie', 185)">Add to Cart</button>
+        </div>
+<div class="menu-item Smoothie">
+    <img src="image/Blueberry Lavender Smoothie.jpg" alt="refreshment">
+    <div class="details">
+        <h5>Blueberry Lavender Smoothie</h5>
+    </div>
+    <span class="price">₹185</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Blueberry Lavender Smoothie', 185)">Add to Cart</button>
+</div>
+<div class="menu-item Smoothie">
+    <img src="image/Chocolate Berry Smoothie.jpg" alt="refreshment">
+    <div class="details">
+        <h5>Chocolate Berry Smoothie</h5>
+    </div>
+    <span class="price">₹185</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Chocolate Berry Smoothie', 185)">Add to Cart</button>
+</div>
+<div class="menu-item Smoothie">
+    <img src="image/Vanilla Bean Smoothie.jpg" alt="refreshment">
+    <div class="details">
+        <h5>Vanilla Bean Smoothie</h5>
+    </div>
+    <span class="price">₹180</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Vanilla Bean Smoothie', 180)">Add to Cart</button>
+</div>
+<div class="menu-item Smoothie">
+    <img src="image/Caramel Mocha Smoothie.jpg" alt="refreshment">
+    <div class="details">
+        <h5>Caramel Mocha Smoothie</h5>
+    </div>
+    <span class="price">₹180</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Caramel Mocha Smoothie', 180)">Add to Cart</button>
+</div>
+<div class="menu-item Smoothie">
+    <img src="image/Strawberry Smoothie.jpg" alt="refreshment">
+    <div class="details">
+        <h5>Strawberry Smoothie</h5>
+    </div>
+    <span class="price">₹180</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Strawberry Smoothie', 180)">Add to Cart</button>
+</div> <!--BEVERAGES-->
+<div class="menu-item Coffee">
+    <img src="coffee/Espresso coffee.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Espresso</h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Espresso', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Flat White.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Flat White</h5>
+    </div>
+    <span class="price">₹122</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Flat White', 122)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Latte.webp" alt="Coffee">
+    <div class="details">
+        <h5>Latte</h5>
+    </div>
+    <span class="price">₹125</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Latte', 125)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Americano.webp" alt="Coffee">
+    <div class="details">
+        <h5>Americano</h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Americano', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Cappuccino.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Cappuccino</h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Cappuccino', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Cold Coffee.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Classic Cold Coffee</h5>
+    </div>
+    <span class="price">₹130</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Classic Cold Coffee', 130)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Frappe.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Frappe</h5>
+    </div>
+    <span class="price">₹140</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Frappe', 140)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Caramel Frappucino.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Caramel Frappucino</h5>
+    </div>
+    <span class="price">₹145</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Caramel Frappucino', 145)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Iced Latte.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Iced Latte</h5>
+    </div>
+    <span class="price">₹140</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Iced Latte', 140)">Add to Cart</button>
+</div>
+<div class="menu-item Coffee">
+    <img src="coffee/Iced Americano.jpg" alt="Coffee">
+    <div class="details">
+        <h5>Iced Americano</h5>
+    </div>
+    <span class="price">₹140</span><div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Iced Americano', 140)">Add to Cart</button>
+</div>
+ <!--Tea-->
+ <div class="menu-item Tea">
+    <img src="coffee/Masala Tea.jpg" alt="Tea">
+    <div class="details">
+        <h5>Masala Tea </h5>
+    </div>
+    <span class="price">₹100</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Masala Tea', 100)">Add to Cart</button>
+</div>
+<div class="menu-item Tea">
+    <img src="coffee/Adarak wali chai.jpg" alt="Tea">
+    <div class="details">
+        <h5>Adarak wali chai</h5>
+    </div>
+    <span class="price">₹110</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Adarak wali chai', 110)">Add to Cart</button>
+</div>
+<div class="menu-item Tea">
+    <img src="coffee/Green Tea.webp" alt="Tea">
+    <div class="details">
+        <h5>Green Tea </h5>
+    </div>
+    <span class="price">₹115</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Green Tea', 115)">Add to Cart</button>
+</div>
+<div class="menu-item Tea">
+    <img src="coffee/Black lemon Tea.jpg" alt="Tea">
+    <div class="details">
+        <h5>Black lemon Tea </h5>
+    </div>
+    <span class="price">₹115</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Black lemon Tea', 115)">Add to Cart</button>
+</div>
+<div class="menu-item Tea">
+    <img src="coffee/Mint Tea.jpg" alt="Tea">
+    <div class="details">
+        <h5>Mint Tea </h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Mint Tea', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Tea">
+    <img src="coffee/Iced Matcha Latte.jpg" alt="Tea">
+    
+    <div class="details">
+        <h5>Iced Matcha Latte </h5>
+    </div>
+    <span class="price">₹130</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Iced Matcha Latte', 130)">Add to Cart</button>
+</div>
+ <!--Appetizer-->
+ <div class="menu-item Appetizer">
+    <img src="stater/Party Cheese Bread.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Party Cheese Bread 🟢 </h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Party Cheese Bread', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Cheese Fries.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Cheese Fries 🟢 </h5>
+    </div>
+    <span class="price">₹135</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Cheese Fries', 135)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Crispy Potato Skins.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Crispy Potato Skins 🟢 </h5>
+    </div>
+    <span class="price">₹140</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Crispy Potato Skins', 140)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Antipasto Platter.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Antipasto Platter 🟢 </h5>
+    </div>
+    <span class="price">₹140</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Antipasto Platter ', 140)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Spicy Sweet Potato Chips & Cilantro Dip.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Spicy Sweet Potato Chips & Cilantro Dip 🟢 </h5>
+    </div>
+    <span class="price">₹120</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('CSpicy Sweet Potato Chips & Cilantro Dip', 120)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Spring Rolls.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Spring Rolls 🟢 </h5>
+    </div>
+    <span class="price">₹130</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Spring Rolls', 130)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Asian Chicken Wings.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Asian Chicken Wings 🔴 </h5>
+    </div>
+    <span class="price">₹150</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Asian Chicken Wings', 150)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Chicken Parm Sliders.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Chicken Parm Sliders 🔴 </h5>
+    </div>
+    <span class="price">₹150</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Chicken Parm Sliders', 150)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Party Shrimp.jpg" alt="Appetizer">
+    <div class="details">
+        <h5> Party Shrimp 🔴 </h5>
+    </div>
+    <span class="price">₹165</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Party Shrimp', 165)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Sweet ‘n’ Tangy Chicken Wings.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Sweet ‘n’ Tangy Chicken Wings 🔴 </h5>
+    </div>
+    <span class="price">₹160</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Sweet ‘n’ Tangy Chicken Wings', 160)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Chicken Pot Stickers.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Chicken Pot Stickers 🔴 </h5>
+    </div>
+    <span class="price">₹150</span>
+    <button class="add-to-cart" onclick="addToCart('Chicken Pot Stickers', 150)">Add to Cart</button>
+</div>
+<div class="menu-item Appetizer">
+    <img src="stater/Chicken Meatballs.jpg" alt="Appetizer">
+    <div class="details">
+        <h5>Chicken Meatballs 🔴 </h5>
+    </div>
+    <span class="price">₹150</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Chicken Meatballs', 150)">Add to Cart</button>
+</div>
+ <!--PIZZA-->
+ <div class="menu-item pizza">
+    <img src="Pizza/Classic Margherita.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Margherita Pizza 🟢</h5>
+    </div>
+    <span class="price">₹299</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Margherita Pizza', 299)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Farmhous Pizza.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Farmhous Pizza 🟢</h5>
+    </div>
+    <span class="price">₹350</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Farmhous Pizza', 350)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Italian Pizza.webp" alt="Pizza">
+    <div class="details">
+        <h5>Italian Pizza 🟢</h5>
+    </div>
+    <span class="price">₹325</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Italian Pizza', 325)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Paneer tikka pizza.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Paneer tikka Pizza 🟢</h5>
+    </div>
+    <span class="price">₹355</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Paneer tikka Pizza', 355)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Mushroom Pizza.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Mushroom Pizza 🟢</h5>
+    </div>
+    <span class="price">₹350</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Mushroom Pizza', 350)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Classic Chicken Pepperoni.avif" alt="Pizza">
+    <div class="details">
+        <h5>Classic Chicken Pepperoni 🔴</h5>
+    </div>
+    <span class="price">₹400</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Classic Chicken Pepperoni', 400)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Chicken-Golden-Delight-Pizza.webp" alt="Pizza">
+    <div class="details">
+        <h5>Chicken-Golden-Delight-Pizza 🔴</h5>
+    </div>
+    <span class="price">₹450</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart(' Chicken-Golden-Delight-Pizza', 450)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Pollo Pizza.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Pollo Pizza 🔴</h5>
+    </div>
+    <span class="price">₹455</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Pollo Pizza', 455)">Add to Cart</button>
+</div>
+<div class="menu-item pizza">
+    <img src="Pizza/Quattro Formaggi Pizza with Figs and Honey.jpg" alt="Pizza">
+    <div class="details">
+        <h5>Quattro Formaggi Pizza with Figs and Honey 🔴</h5>
+    </div>
+    <span class="price">₹445</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart(' Quattro Formaggi Pizza with Figs and Honey', 445)">Add to Cart</button>
+</div>
+<!--BURGER-->
+<div class="menu-item burger">
+    <img src="image/burger.jpg" alt="Burger">
+    <div class="details">
+        <h5>Cheese Burger 🟢</h5>
+    </div>
+    <span class="price">₹150</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Cheese Burger', 150)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Veg Supreme Burger.jpg" alt="Burger">
+    <div class="details">
+        <h5>Veg Supreme Burger 🟢</h5>
+    </div>
+    <span class="price">₹175</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Veg Supreme Burger', 175)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Aloo Tikki Burger.jpg" alt="Burger">
+    <div class="details">
+        <h5>Aloo Tikki Burger 🟢</h5>
+    </div>
+    <span class="price">₹160</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Aloo Tikki Burger', 160)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Crispy Pnaeer Burger.jpeg" alt="Burger">
+    <div class="details">
+        <h5>Crispy Pnaeer Burger 🟢</h5>
+    </div>
+    <span class="price">₹185</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Crispy Pnaeer Burger', 185)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Spicy Chicken Burger.webp" alt="Burger">
+    <div class="details">
+        <h5>Spicy Chicken Burger 🔴</h5>
+    </div>
+    <span class="price">₹199</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Spicy Chicken Burger', 199)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Grilled Chicken Burger.jpg" alt="Burger">
+    <div class="details">
+        <h5>Grilled Chicken Burger 🔴</h5>
+    </div>
+    <span class="price">₹240</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Grilled Chicken Burger', 240)">Add to Cart</button>
+</div>
+<div class="menu-item burger">
+    <img src="B/Doubledecker Crispy Chicken Burger.avif" alt="Burger">
+    <div class="details">
+        <h5>Doubledecker Crispy Chicken Burger 🔴</h5>
+    </div>
+    <span class="price">₹265</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Doubledecker Crispy Chicken Burger', 265)">Add to Cart</button>
+</div>
+    <!--DESSERT-->
+    <div class="menu-item dessert">
+        <img src="d/chocolate pastry.jpg" alt="chocolate pastry">
+        <div class="details">
+        <h5>chocolate pastry</h5>
+        </div>
+        <span class="price">₹140</span>
+        <div class="quantity-selector">
+            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+            <span class="quantity">1</span>
+            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('chocolate pastry', 140)">Add to Cart</button>
+        </div>
+        <div class="menu-item dessert">
+        <img src="d/Brownie Sundae.webp" alt="Brownie Sundae">
+        <div class="details">
+        <h5>Brownie Sundae</h5>
+        </div>
+        <span class="price">₹170</span>
+        <div class="quantity-selector">
+            <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+            <span class="quantity">1</span>
+            <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Brownie Sundae', 170)">Add to Cart</button>
+</div>
+<div class="menu-item dessert">
+    <img src="d/Coffee-Cheesecake.webp" alt="Coffee-Cheesecake">
+    <div class="details">
+        <h5>Coffee-Cheesecake</h5>
+    </div>
+    <span class="price">₹180</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Coffee-Cheesecake', 180)">Add to Cart</button>
+</div>
+<div class="menu-item dessert">
+    <img src="d/Blueberry-Cheesecake.jpg" alt="Blueberry-Cheesecake">
+    <div class="details">
+        <h5>Blueberry-Cheesecake</h5>
+    </div>
+    <span class="price">₹208</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Blueberry-Cheesecake', 208)">Add to Cart</button>
+</div>
+<div class="menu-item dessert">
+    <img src="d/Coffee Hazelnut Tart.jpg" alt="Coffee Hazelnut Tart">
+    <div class="details">
+        <h5>Coffee Hazelnut Tart</h5>
+    </div>
+    <span class="price">₹210</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Coffee Hazelnut Tart', 210)">Add to Cart</button>
+</div>
+<div class="menu-item dessert">
+    <img src="d/Tiramisu.jpg" alt="Tiramisu">
+    <div class="details">
+        <h5>Tiramisu</h5>
+    </div>
+    <span class="price">₹210</span>
+    <div class="quantity-selector">
+        <button class="quantity-btn minus" onclick="updateQuantity(this, -1)">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn plus" onclick="updateQuantity(this, 1)">+</button>
+    </div>
+    <button class="add-to-cart" onclick="addToCart('Tiramisu', 210)">Add to Cart</button>
+</div>
+    </div>
+
+    <!-- ✅ Bottom Navigation -->
+    <a href="cart1.html"><button>Next ➡</button></a>
+    <script src="menuscript.js"></script>
+    <script>
+        function addToCart(item, price) {
+            alert(item + ' added to cart for ₹' + price);
+        }
+
+        function filterMenu(category) {
+            let items = document.querySelectorAll('.menu-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex'; // Show items
+                } else {
+                    item.style.display = 'none'; // Hide items
+                }
+            });
+        }
+    </script>
+</body>
+</html>
